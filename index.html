@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convert currency</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 400px;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 90%;
+            outline: none;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .result {
+            margin-top: 10px;   
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(11, 102, 145);
+
+        }
+    </style>
+    <form action="">
+        <input type="number" name="dollar" placeholder="USD Dollar" />
+        <div class="result">{0} USD Dollar = {0} Egyptian Pound</div>
+    </form>
+
+    <script>
+        let input = document.querySelector("input");
+            let result = document.getElementsByClassName("result")[0];
+            let form = document.getElementsByTagName("form")
+
+
+            input.oninput = function () {
+                result.innerHTML = `$${input.value} USD Dollar = 
+                ${(input.value * 15.6).toFixed(2)} Egyptian Pound`
+            };
+    </script>
+    
+</body>
+</html>
